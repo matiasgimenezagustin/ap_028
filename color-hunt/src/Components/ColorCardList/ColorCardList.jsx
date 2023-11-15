@@ -28,7 +28,7 @@ const ColorCardList = () => {
         
     ]
   return (
-    <div>
+    <div className='colorCardList'>
         {colors.map(color =>(
             <ColorCard color={color} key={color.id}/>
         ))}

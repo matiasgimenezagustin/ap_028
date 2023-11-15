@@ -1,15 +1,33 @@
-import React from 'react'
-import { GoHeart } from "react-icons/go";
+import React, { useState } from 'react'
+import { GoHeart, GoHeartFill } from "react-icons/go";
+import ColorItem from '../ColorItem/ColorItem';
 const ColorCard = ({color}) => {
+
+  const [isLiked, setIsLiked] = useState(false)
+  const [likes, setLikes ] = useState(color.likes)
+  const handleLikeCard = () =>{
+    isLiked ? setLikes(likes - 1) : setLikes(likes + 1)
+    setIsLiked(!isLiked)
+    
+  }
   return (
     <div className='colorCard'>
-      {color.colors.map((color, index) => 
-        <div key={index}>
-          <span>{color}</span>
-        </div>
-      )}
-      <div>
-        <button><GoHeart/>{color.likes}</button>
+      <div className='colorList'>
+        {color.colors.map((color, index) => (
+          <ColorItem color={color} key={index} />
+        ))}
+      </div>
+      
+      <div className='colorCardInfo'>
+        <button onClick={handleLikeCard}>
+          {
+            isLiked 
+            ? <GoHeartFill className='iconLike'/>
+            :  <GoHeart className='iconLike'/>
+           
+          }
+        {likes}
+        </button>
         <span>{color.date}</span>
       </div>
 

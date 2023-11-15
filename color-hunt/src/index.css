@@ -40,6 +40,7 @@ header{
   border: none;
   background-color: transparent;
   padding-left: 40px;
+  outline: none;
 }
 
 .search .busqueda-icon{
@@ -58,4 +59,86 @@ header{
 .menu{
   border: none;
   background-color: transparent;
+}
+
+
+/* ColorList */
+
+.colorCard{
+  width: 200px;
+}
+
+.colorList{
+  display: flex;
+  flex-direction: column;
+  height: 200px;  
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+.color:nth-child(1){
+  flex: 1;
+}
+.color:nth-child(2){
+  flex: 1.5;
+}
+.color:nth-child(3){
+  flex: 2;
+}
+.color:nth-child(4){
+  flex: 2.5;
+}
+
+.colorCardInfo{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+  position: relative;
+}
+.colorList div{
+
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+.colorList div span{
+  background-color: rgba(0, 0, 0, 0.513);
+  color: white;
+  font-size: 14px;
+  padding: 2px;
+  border-top-right-radius: 5px;
+  display: none;
+  cursor: pointer;
+}
+
+.colorList div:hover span{
+  display: flex;
+
+}
+
+
+.colorCardInfo button{
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconLike{
+  font-size: 18px;
+}
+
+.colorCardInfo span{
+  color:rgb(145, 142, 142);
+  font-size: 14px;
+}
+
+.colorCardList{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
